@@ -1,0 +1,7 @@
+error:
+  user:
+    name:
+      is_empty: User name is empty
+    geo_location:
+      address:
+        is_empty: Geo Location address is empty

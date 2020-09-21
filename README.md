@@ -1,11 +1,11 @@
 # Formalism R18n Errors
 
-![Cirrus CI - Base Branch Build Status](https://img.shields.io/cirrus/github/AlexWayfer/formalism-r18n_errors?style=flat-square)
+[![Cirrus CI - Base Branch Build Status](https://img.shields.io/cirrus/github/AlexWayfer/formalism-r18n_errors?style=flat-square)](https://cirrus-ci.com/github/AlexWayfer/formalism-r18n_errors)
 [![Codecov branch](https://img.shields.io/codecov/c/github/AlexWayfer/formalism-r18n_errors/master.svg?style=flat-square)](https://codecov.io/gh/AlexWayfer/formalism-r18n_errors)
 [![Code Climate](https://img.shields.io/codeclimate/maintainability/AlexWayfer/formalism-r18n_errors.svg?style=flat-square)](https://codeclimate.com/github/AlexWayfer/formalism-r18n_errors)
-![Depfu](https://img.shields.io/depfu/AlexWayfer/formalism-r18n_errors?style=flat-square)
+[![Depfu](https://img.shields.io/depfu/AlexWayfer/benchmark_toys?style=flat-square)](https://depfu.com/repos/github/AlexWayfer/formalism-r18n_errors)
 [![Inline docs](https://inch-ci.org/github/AlexWayfer/formalism-r18n_errors.svg?branch=master)](https://inch-ci.org/github/AlexWayfer/formalism-r18n_errors)
-[![license](https://img.shields.io/github/license/AlexWayfer/formalism-r18n_errors.svg?style=flat-square)](https://github.com/AlexWayfer/formalism-r18n_errors/blob/master/LICENSE)
+[![license](https://img.shields.io/github/license/AlexWayfer/formalism-r18n_errors.svg?style=flat-square)](LICENSE.txt)
 [![Gem](https://img.shields.io/gem/v/formalism-r18n_errors.svg?style=flat-square)](https://rubygems.org/gems/formalism-r18n_errors)
 
 Errors for [Formalism](https://github.com/AlexWayfer/formalism)

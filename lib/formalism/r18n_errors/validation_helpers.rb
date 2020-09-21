@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'gorilla_patch/blank'
+
 module Formalism
 	module R18nErrors
 		## Helper methods for validations

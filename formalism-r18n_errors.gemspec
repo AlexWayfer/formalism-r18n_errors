@@ -30,6 +30,7 @@ Gem::Specification.new do |spec|
 	spec.files = Dir['lib/**/*.rb', 'README.md', 'LICENSE.txt', 'CHANGELOG.md']
 
 	spec.add_runtime_dependency 'formalism', '~> 0.1.0'
+	spec.add_runtime_dependency 'gorilla_patch', '~> 4.0'
 	spec.add_runtime_dependency 'r18n-core', '~> 4.0'
 
 	spec.add_development_dependency 'pry-byebug', '~> 3.9'

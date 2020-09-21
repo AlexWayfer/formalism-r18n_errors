@@ -2,6 +2,10 @@
 
 ## master (unreleased)
 
+## 0.1.2 (2020-09-22)
+
+*   Require `gorilla_patch/blank` before its usage.
+
 ## 0.1.1 (2020-09-22)
 
 *   Fix the issue with unknown `Forwardable` constant.

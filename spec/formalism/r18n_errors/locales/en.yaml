@@ -1,7 +1,37 @@
 error:
   user:
+    itself:
+      already_exists:
+        city_and_country: User with these city and country already exists
     name:
       is_empty: User name is empty
+      not_provided: User name not provided
+      not_entered: User name not entered
+      not_chosen: User name not chosen
+      greater_than: User name greater than %1 characters
+      less_than: User name less than %1 characters
+      already_taken: This user name already taken
+    city:
+      not_provided: User city not provided
+      not_entered: User city not entered
+      not_chosen: User city not chosen
+    country:
+      not_provided: User country not provided
+      not_entered: User country not entered
+      not_chosen: User country not chosen
+    score:
+      less_than: User score less than %1
+      greater_than: User score greater than %1
+    email:
+      not_valid_email: User email is not valid
+    secondary_email:
+      not_valid_email: User secondary email is not valid
+    backup_email:
+      not_valid_email: User backup email is not valid
+    location:
+      not_provided: User location not provided
+      not_entered: User location not entered
+      not_chosen: User location not chosen
     geolocation:
       address:
         is_empty: Geolocation address is empty

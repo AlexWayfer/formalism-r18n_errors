@@ -30,33 +30,6 @@ module Formalism
 				validate_provision(*validation_fields, error_key: :not_chosen)
 			end
 
-			def validate_uniqueness(*fields_combinations)
-				valid = true
-				fields_combinations.each do |*fields_combination|
-					fields_combination.flatten!
-
-					next if fields_combination.none? { |field| field_changed?(field) }
-
-					next if unique_by_fields_combination? fields_combination
-
-					valid = false
-					add_error_for_uniqueness_validation fields_combination
-				end
-				valid
-			end
-
-			def validate_email(*validation_fields)
-				valid = true
-				validation_fields.flatten.each do |validation_field|
-					next unless field_changed?(validation_field)
-					next if EmailAddress.valid? public_send(validation_field)
-
-					valid = false
-					add_error validation_field, :not_valid_email
-				end
-				valid
-			end
-
 			def validate_max_length(validation_field, max_length)
 				return unless field_changed?(validation_field)
 
@@ -89,6 +62,37 @@ module Formalism
 				add_error validation_field, :greater_than, args: range.end
 			end
 
+			## Requires `email_address` gem
+			def validate_email(*validation_fields)
+				valid = true
+				validation_fields.flatten.each do |validation_field|
+					next unless field_changed?(validation_field)
+					next if EmailAddress.valid? public_send(validation_field)
+
+					valid = false
+					add_error validation_field, :not_valid_email
+				end
+				valid
+			end
+
+			## Requires `formalism-model_form` gem
+			def validate_uniqueness(*fields_combinations)
+				valid = true
+				fields_combinations.each do |*fields_combination|
+					fields_combination.flatten!
+
+					next if fields_combination.none? { |field| field_changed?(field) }
+
+					next if unique_by_fields_combination? fields_combination
+
+					valid = false
+					add_error_for_uniqueness_validation fields_combination
+				end
+				valid
+			end
+
+			## Private methods for this module
+
 			def field_valid?(field)
 				result = true
 				if (nested_form = nested_forms[field])
@@ -120,14 +124,6 @@ module Formalism
 
 			def field_changed?(_field)
 				true ## can be redefined, for example, in update forms
-			end
-
-			def validate_constraint(*error_keys, &block)
-				return true if instance_exec(&block)
-
-				add_error(*error_keys)
-
-				false
 			end
 		end
 	end

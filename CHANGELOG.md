@@ -2,6 +2,12 @@
 
 ## master (unreleased)
 
+## 0.1.3 (2020-09-23)
+
+*   Add specs for anything, especially for `ValidationHelpers`.
+    Make code coverage 100%.
+*   Add documentation about `ValidationHelpers`.
+
 ## 0.1.2 (2020-09-22)
 
 *   Require `gorilla_patch/blank` before its usage.

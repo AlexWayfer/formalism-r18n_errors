@@ -60,7 +60,7 @@ describe Formalism::R18nErrors do
 		end
 	end
 
-	let(:form_class) { base_form_class }
+	let(:form_class) { user_form_class }
 
 	let(:params) {}
 
@@ -70,8 +70,6 @@ describe Formalism::R18nErrors do
 		subject(:errors_translations) { form.run.errors.translations }
 
 		context 'with `errors_key`' do
-			let(:form_class) { user_form_class }
-
 			it { is_expected.to eq ['User name is empty'] }
 		end
 
@@ -94,8 +92,6 @@ describe Formalism::R18nErrors do
 
 	describe '`:errors_key` option for nested' do
 		subject { form.run.errors.translations }
-
-		let(:form_class) { user_form_class }
 
 		before do
 			geolocation_form_class = self.geolocation_form_class
@@ -121,8 +117,6 @@ describe Formalism::R18nErrors do
 				nested :permissions, permissions_form_class, errors_key: nil
 			end
 		end
-
-		let(:form_class) { user_form_class }
 
 		let(:params) do
 			{

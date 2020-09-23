@@ -2,6 +2,6 @@ error:
   user:
     name:
       is_empty: User name is empty
-    geo_location:
+    geolocation:
       address:
-        is_empty: Geo Location address is empty
+        is_empty: Geolocation address is empty

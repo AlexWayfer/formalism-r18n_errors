@@ -36,7 +36,7 @@ describe Formalism::R18nErrors do
 		end
 	end
 
-	let(:geo_location_form_class) do
+	let(:geolocation_form_class) do
 		Class.new(base_form_class) do
 			field :address, String
 
@@ -98,25 +98,25 @@ describe Formalism::R18nErrors do
 		let(:form_class) { user_form_class }
 
 		before do
-			geo_location_form_class = self.geo_location_form_class
+			geolocation_form_class = self.geolocation_form_class
 
 			user_form_class.class_exec do
-				nested :location, geo_location_form_class, errors_key: :geo_location
+				nested :location, geolocation_form_class, errors_key: :geolocation
 			end
 		end
 
-		it { is_expected.to eq ['User name is empty', 'Geo Location address is empty'] }
+		it { is_expected.to eq ['User name is empty', 'Geolocation address is empty'] }
 	end
 
 	describe '#to_params' do
 		subject { form.to_params }
 
 		before do
-			geo_location_form_class = self.geo_location_form_class
+			geolocation_form_class = self.geolocation_form_class
 			permissions_form_class = self.permissions_form_class
 
 			user_form_class.class_exec do
-				nested :location, geo_location_form_class, errors_key: :geo_location
+				nested :location, geolocation_form_class, errors_key: :geolocation
 
 				nested :permissions, permissions_form_class, errors_key: nil
 			end

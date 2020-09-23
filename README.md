@@ -57,7 +57,7 @@ module MyProject
       field :name, String
 
       ## `:errors_key` can be changed for nested forms
-      nested :location, GeoLocation, errors_key: :geo_location
+      nested :location, GeoLocation, errors_key: :geolocation
 
       private
 

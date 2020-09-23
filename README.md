@@ -70,6 +70,68 @@ module MyProject
 end
 ```
 
+### Validation Helpers
+
+```ruby
+require 'formalism/r18n_errors/validation_helpers'
+
+module MyProject
+  module Forms
+    class Base < Formalism::Form
+      include Formalism::R18nErrors
+      include Formalism::R18nErrors::ValidationHelpers
+
+      # ...
+    end
+
+    class User < Base
+      field :name, String
+      field :country
+      field :city
+      field :score, Float
+      field :email, String
+
+      nested :location, GeoLocation
+
+      private
+
+      def validate
+        ## `errors.user.name.not_entered`
+        validate_entry :name
+
+        ## `errors.user.country.not_chosen`
+        ## `errors.user.city.not_chosen`
+        validate_choice %i[country city]
+
+        ## `errors.user.location.not_provided`
+        validate_provision :location
+
+        ## `errors.user.name.greater_than(20)`
+        validate_max_length :name, 20
+
+        ## `errors.user.name.less_than(3)`
+        validate_min_length :name, 3
+
+        ## `errors.user.score.greater_than(5)`
+        ## or
+        ## `errors.user.score.less_than(1)`
+        validate_range_entry :score, 1..5
+
+        ## Requires `email_address` gem
+        ## `errors.user.email.not_valid_email`
+        validate_email :email
+
+        ## Requires `formalism-model_form` gem
+        ## `errors.user.email.already_taken`
+        validate_uniqueness :email
+        ## `errors.user.itself.already_exists.country_and_city`
+        validate_uniqueness %i[country city]
+      end
+    end
+  end
+end
+```
+
 ## Development
 
 After checking out the repo, run `bundle install` to install dependencies.

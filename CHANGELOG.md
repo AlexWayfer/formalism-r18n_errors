@@ -2,6 +2,10 @@
 
 ## master (unreleased)
 
+## 0.2.0 (2020-09-24)
+
+*   Update `formalism` to a fixed version.
+
 ## 0.1.3 (2020-09-23)
 
 *   Add specs for anything, especially for `ValidationHelpers`.

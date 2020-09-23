@@ -55,7 +55,7 @@ describe Formalism::R18nErrors do
 			private
 
 			def validate
-				add_error :permissions, :are_empty if permissions.empty?
+				# add_error :permissions, :are_empty if permissions.empty?
 			end
 		end
 	end
@@ -135,5 +135,34 @@ describe Formalism::R18nErrors do
 		end
 
 		it { is_expected.to eq expected_params }
+	end
+
+	describe '#translations_hash' do
+		subject { form.run.errors.translations_hash }
+
+		before do
+			geolocation_form_class = self.geolocation_form_class
+
+			user_form_class.class_exec do
+				nested :location, geolocation_form_class, errors_key: :geolocation
+			end
+		end
+
+		let(:expected_hash) do
+			{
+				user: {
+					name: {
+						is_empty: 'User name is empty'
+					},
+					geolocation: {
+						address: {
+							is_empty: 'Geolocation address is empty'
+						}
+					}
+				}
+			}
+		end
+
+		it { is_expected.to eq expected_hash }
 	end
 end

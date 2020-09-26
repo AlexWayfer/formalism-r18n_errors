@@ -57,6 +57,7 @@ module Formalism
 
 				add_error validation_field, :less_than, args: range.begin if value < range.begin
 
+				return unless range.end
 				return if value.public_send (range.exclude_end? ? :< : :<=), range.end
 
 				add_error validation_field, :greater_than, args: range.end

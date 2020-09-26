@@ -30,6 +30,7 @@ describe Formalism::R18nErrors::ValidationHelpers do
 			field :name, String
 			field :country
 			field :city
+			field :score, Float
 
 			nested :location, geolocation_form_class, merge_errors: false
 
@@ -239,17 +240,16 @@ describe Formalism::R18nErrors::ValidationHelpers do
 
 	describe '#validate_range_entry' do
 		before do
-			user_form_class.class_exec do
-				field :score, Float
-
+			user_form_class.class_exec(score_range) do |score_range|
 				private
 
-				def validate
-					validate_range_entry :score, 1..5
+				define_method :validate do
+					validate_range_entry :score, score_range
 				end
 			end
 		end
 
+		let(:score_range) { 1..5 }
 		let(:params) { non_empty_params }
 		let(:non_empty_params) { super().merge(score: score) }
 
@@ -275,6 +275,13 @@ describe Formalism::R18nErrors::ValidationHelpers do
 
 		context 'when score fits in range' do
 			let(:score) { 4.8 }
+
+			it { is_expected.to be_empty }
+		end
+
+		context 'when range is endless' do
+			let(:score_range) { (1..) }
+			let(:score) { 999 }
 
 			it { is_expected.to be_empty }
 		end

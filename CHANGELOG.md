@@ -2,6 +2,11 @@
 
 ## master (unreleased)
 
+## 0.3.0 (2020-09-27)
+
+*   Support endless ranges in `#validate_range_entry`.
+*   Drop Ruby 2.5 support.
+
 ## 0.2.0 (2020-09-24)
 
 *   Update `formalism` to a fixed version.

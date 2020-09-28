@@ -2,6 +2,10 @@
 
 ## master (unreleased)
 
+## 0.3.1 (2020-09-28)
+
+*   Update `formalism` to a new version.
+
 ## 0.3.0 (2020-09-27)
 
 *   Support endless ranges in `#validate_range_entry`.

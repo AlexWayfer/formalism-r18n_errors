@@ -121,6 +121,10 @@ module MyProject
         ## `errors.user.email.not_valid_email`
         validate_email :email
 
+        ## Requires `uuid` gem
+        ## `errors.user.key.not_valid_uuid`
+        validate_uuid :key
+
         ## Requires `formalism-model_form` gem
         ## `errors.user.email.already_taken`
         validate_uniqueness :email

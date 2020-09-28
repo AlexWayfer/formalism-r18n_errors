@@ -28,6 +28,12 @@ error:
       not_valid_email: User secondary email is not valid
     backup_email:
       not_valid_email: User backup email is not valid
+    key:
+      not_valid_uuid: User key is not valid
+    another_key:
+      not_valid_uuid: User another key is not valid
+    secret_key:
+      not_valid_uuid: User secret key is not valid
     location:
       not_provided: User location not provided
       not_entered: User location not entered

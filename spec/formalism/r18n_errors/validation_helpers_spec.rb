@@ -337,6 +337,56 @@ describe Formalism::R18nErrors::ValidationHelpers do
 		end
 	end
 
+	describe '#validate_uuid' do
+		before do
+			require 'uuid'
+
+			user_form_class.class_exec do
+				field :key, String
+				field :another_key, String
+				field :secret_key, String
+
+				private
+
+				def validate
+					validate_uuid :key
+					validate_uuid %i[another_key secret_key]
+				end
+			end
+		end
+
+		let(:expected_errors) do
+			[
+				'User key is not valid',
+				'User another key is not valid',
+				'User secret key is not valid'
+			]
+		end
+
+		context 'when params are empty' do
+			it { is_expected.to eq expected_errors }
+		end
+
+		context 'when params are not empty' do
+			let(:params) { non_empty_params }
+			let(:non_empty_params) do
+				super().merge(key: user_key, another_key: user_key, secret_key: user_key)
+			end
+
+			context 'when email is not valid' do
+				let(:user_key) { 'foo-bar' }
+
+				it { is_expected.to eq expected_errors }
+			end
+
+			context 'when email is valid' do
+				let(:user_key) { '123e4567-e89b-12d3-a456-426655440000' }
+
+				it { is_expected.to be_empty }
+			end
+		end
+	end
+
 	describe '#validate_uniqueness' do
 		before do
 			user_form_class.class_exec do

@@ -289,6 +289,8 @@ describe Formalism::R18nErrors::ValidationHelpers do
 
 	describe '#validate_email' do
 		before do
+			require 'email_address'
+
 			user_form_class.class_exec do
 				field :email, String
 				field :secondary_email, String
@@ -301,9 +303,6 @@ describe Formalism::R18nErrors::ValidationHelpers do
 					validate_email %i[secondary_email backup_email]
 				end
 			end
-
-			stub_const 'EmailAddress', class_double('EmailAddress')
-			allow(EmailAddress).to receive(:valid?) { |string| string.to_s.include?('@') }
 		end
 
 		let(:expected_errors) do
@@ -331,7 +330,7 @@ describe Formalism::R18nErrors::ValidationHelpers do
 			end
 
 			context 'when email is valid' do
-				let(:user_email) { 'me@alexwayfer.name' }
+				let(:user_email) { 'alex.wayfer@gmail.com' }
 
 				it { is_expected.to be_empty }
 			end

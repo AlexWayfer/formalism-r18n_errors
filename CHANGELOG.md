@@ -2,6 +2,11 @@
 
 ## master (unreleased)
 
+## 0.3.2 (2020-09-28)
+
+*   Add `#validate_uuid` validation helper.
+*   Use real gems as development dependencies for tests.
+
 ## 0.3.1 (2020-09-28)
 
 *   Update `formalism` to a new version.

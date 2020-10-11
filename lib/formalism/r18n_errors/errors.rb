@@ -18,7 +18,7 @@ module Formalism
 				def initialize(translations, form_errors)
 					@translations = translations
 					@form_errors = form_errors
-					@result = Hash.new { |hsh, key| hsh[key] = Hash.new(&hsh.default_proc) }
+					@result = Hash.new { |hash, key| hash[key] = Hash.new(&hash.default_proc) }
 				end
 
 				def translate(prefixes)

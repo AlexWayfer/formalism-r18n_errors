@@ -82,6 +82,8 @@ module Formalism
 				end
 			end
 
+			alias to_a translations
+
 			def translations_hash(*prefixes)
 				prefixes.push(@hash.keys.first) if @hash.keys.first
 				@hash.transform_values do |errors|

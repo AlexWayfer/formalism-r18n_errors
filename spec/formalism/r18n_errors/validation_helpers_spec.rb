@@ -60,7 +60,7 @@ describe Formalism::R18nErrors::ValidationHelpers do
 
 	let(:form_class) { user_form_class }
 
-	let(:params) {}
+	let(:params) { nil }
 
 	let(:user_name) { 'Alexander' }
 	let(:user_city) { 'Moscow' }

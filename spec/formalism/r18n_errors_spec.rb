@@ -62,7 +62,7 @@ describe Formalism::R18nErrors do
 
 	let(:form_class) { user_form_class }
 
-	let(:params) {}
+	let(:params) { nil }
 
 	let(:form) { form_class.new(params) }
 

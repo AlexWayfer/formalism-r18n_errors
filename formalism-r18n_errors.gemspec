@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
 	DESC
 	spec.license = 'MIT'
 
-	spec.required_ruby_version = '~> 2.6'
+	spec.required_ruby_version = '>= 2.6', '< 4'
 
 	source_code_uri = 'https://github.com/AlexWayfer/formalism-r18n_errors'
 
@@ -29,7 +29,7 @@ Gem::Specification.new do |spec|
 
 	spec.files = Dir['lib/**/*.rb', 'README.md', 'LICENSE.txt', 'CHANGELOG.md']
 
-	spec.add_runtime_dependency 'formalism', '~> 0.3.0'
+	spec.add_runtime_dependency 'formalism', '~> 0.4.0'
 	spec.add_runtime_dependency 'gorilla_patch', '~> 4.0'
 	spec.add_runtime_dependency 'r18n-core', '~> 4.0'
 

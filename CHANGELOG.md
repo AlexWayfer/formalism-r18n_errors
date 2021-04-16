@@ -2,6 +2,13 @@
 
 ## master (unreleased)
 
+## 0.4.0 (2021-04-16)
+
+*   Add `to_a` alias for `translations` method.
+    Fix an error with `#result` call of failed `Formalism::Form::Outcome`.
+*   Support Ruby 3.
+*   Update development dependencies.
+
 ## 0.3.2 (2020-09-28)
 
 *   Add `#validate_uuid` validation helper.

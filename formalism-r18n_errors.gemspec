@@ -14,20 +14,20 @@ Gem::Specification.new do |spec|
 	DESC
 	spec.license = 'MIT'
 
-	spec.required_ruby_version = '>= 2.6', '< 4'
+	github_uri = "https://github.com/AlexWayfer/#{spec.name}"
 
-	source_code_uri = 'https://github.com/AlexWayfer/formalism-r18n_errors'
+	spec.homepage = github_uri
 
-	spec.homepage = source_code_uri
-
-	spec.metadata['source_code_uri'] = source_code_uri
-
-	spec.metadata['homepage_uri'] = spec.homepage
-
-	spec.metadata['changelog_uri'] =
-		'https://github.com/AlexWayfer/formalism-r18n_errors/blob/master/CHANGELOG.md'
+	spec.metadata = {
+		'bug_tracker_uri' => "#{github_uri}/issues",
+		'changelog_uri' => "#{github_uri}/blob/v#{spec.version}/CHANGELOG.md",
+		'homepage_uri' => spec.homepage,
+		'source_code_uri' => github_uri
+	}
 
 	spec.files = Dir['lib/**/*.rb', 'README.md', 'LICENSE.txt', 'CHANGELOG.md']
+
+	spec.required_ruby_version = '>= 2.6', '< 4'
 
 	spec.add_runtime_dependency 'formalism', '~> 0.4.0'
 	spec.add_runtime_dependency 'gorilla_patch', '~> 4.0'

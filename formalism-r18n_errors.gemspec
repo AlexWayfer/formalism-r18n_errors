@@ -42,14 +42,14 @@ Gem::Specification.new do |spec|
 	spec.add_development_dependency 'pry-byebug', '~> 3.9'
 
 	spec.add_development_dependency 'bundler', '~> 2.0'
+	spec.add_development_dependency 'bundler-audit', '~> 0.8.0'
+
 	spec.add_development_dependency 'gem_toys', '~> 0.8.0'
 	spec.add_development_dependency 'toys', '~> 0.11.0'
 
-	spec.add_development_dependency 'bundler-audit', '~> 0.8.0'
-
-	spec.add_development_dependency 'codecov', '~> 0.5.0'
 	spec.add_development_dependency 'rspec', '~> 3.9'
 	spec.add_development_dependency 'simplecov', '~> 0.21.0'
+	spec.add_development_dependency 'simplecov-cobertura', '~> 2.1'
 
 	spec.add_development_dependency 'rubocop', '~> 1.36.0'
 	spec.add_development_dependency 'rubocop-performance', '~> 1.0'

@@ -289,6 +289,7 @@ describe Formalism::R18nErrors::ValidationHelpers do
 
 	describe '#validate_email' do
 		before do
+			require 'net/smtp'
 			require 'email_address'
 
 			user_form_class.class_exec do

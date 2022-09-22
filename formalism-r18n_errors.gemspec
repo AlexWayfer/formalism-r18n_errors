@@ -35,6 +35,7 @@ Gem::Specification.new do |spec|
 	spec.add_runtime_dependency 'r18n-core', '~> 5.0'
 
 	spec.add_development_dependency 'email_address', '~> 0.1.0'
+	spec.add_development_dependency 'net-smtp', '~> 0.3.1'
 	spec.add_development_dependency 'sequel', '~> 5.60'
 	spec.add_development_dependency 'uuid', '~> 2.0'
 

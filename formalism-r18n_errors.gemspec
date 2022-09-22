@@ -22,6 +22,7 @@ Gem::Specification.new do |spec|
 		'bug_tracker_uri' => "#{github_uri}/issues",
 		'changelog_uri' => "#{github_uri}/blob/v#{spec.version}/CHANGELOG.md",
 		'homepage_uri' => spec.homepage,
+		'rubygems_mfa_required' => 'true',
 		'source_code_uri' => github_uri
 	}
 
@@ -34,6 +35,7 @@ Gem::Specification.new do |spec|
 	spec.add_runtime_dependency 'r18n-core', '~> 5.0'
 
 	spec.add_development_dependency 'email_address', '~> 0.1.0'
+	spec.add_development_dependency 'sequel', '~> 5.60'
 	spec.add_development_dependency 'uuid', '~> 2.0'
 
 	spec.add_development_dependency 'pry-byebug', '~> 3.9'

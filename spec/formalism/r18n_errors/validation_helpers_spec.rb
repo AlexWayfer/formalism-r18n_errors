@@ -388,6 +388,8 @@ describe Formalism::R18nErrors::ValidationHelpers do
 	end
 
 	describe '#validate_uniqueness' do
+		require 'sequel'
+
 		before do
 			user_form_class.class_exec do
 				private
@@ -400,7 +402,7 @@ describe Formalism::R18nErrors::ValidationHelpers do
 
 			allow(form).to receive(:model).and_return form_model
 
-			form_instance = instance_double('instance')
+			form_instance = instance_double(Sequel::Model)
 
 			allow(form_instance).to receive(:pk_hash).and_return(id: 42)
 
@@ -442,9 +444,9 @@ describe Formalism::R18nErrors::ValidationHelpers do
 			end
 		end
 
-		let(:form_model) { class_double('Sequel::Model') }
-		let(:name_dataset_double) { instance_double('dataset') }
-		let(:city_and_country_dataset_double) { instance_double('dataset') }
+		let(:form_model) { class_double(Sequel::Model) }
+		let(:name_dataset_double) { instance_double(Sequel::Dataset) }
+		let(:city_and_country_dataset_double) { instance_double(Sequel::Dataset) }
 
 		let(:params) { non_empty_params }
 

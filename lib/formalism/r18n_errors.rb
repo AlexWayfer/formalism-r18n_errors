@@ -22,10 +22,11 @@ module Formalism
 
 		private
 
-		def initialize_nested_form(name, options)
+		def fill_nested_form(name, options)
 			return unless (form = super)
 
 			form.errors_key = options.fetch(:errors_key, name)
+
 			form
 		end
 

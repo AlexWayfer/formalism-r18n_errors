@@ -2,6 +2,15 @@
 
 ## Unreleased
 
+## 0.5.0 (2022-09-24)
+
+*   Update `formalism` to a new version.
+*   Add Ruby 3.1 support.
+*   Update development dependencies.
+*   Resolve RuboCop offenses.
+*   Improve gemspec metadata.
+*   Add `bundle-audit` CI task.
+
 ## 0.4.0 (2021-04-16)
 
 *   Add `to_a` alias for `translations` method.

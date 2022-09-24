@@ -31,7 +31,7 @@ Gem::Specification.new do |spec|
 	spec.required_ruby_version = '>= 2.6', '< 4'
 
 	spec.add_runtime_dependency 'formalism', '~> 0.5.0'
-	spec.add_runtime_dependency 'gorilla_patch', '~> 4.0'
+	spec.add_runtime_dependency 'gorilla_patch', '>= 4.0', '< 6'
 	spec.add_runtime_dependency 'r18n-core', '~> 5.0'
 
 	spec.add_development_dependency 'email_address', '~> 0.2.4'

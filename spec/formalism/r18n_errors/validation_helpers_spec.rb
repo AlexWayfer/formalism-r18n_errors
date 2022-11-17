@@ -405,7 +405,7 @@ describe Formalism::R18nErrors::ValidationHelpers do
 
 			form_instance = instance_double(Sequel::Model)
 
-			allow(form_instance).to receive(:pk_hash).and_return(id: 42)
+			allow(form_instance).to receive(:pk_hash).and_return(form_instance_pk_hash)
 
 			allow(form).to receive(:instance).and_return form_instance
 
@@ -421,11 +421,13 @@ describe Formalism::R18nErrors::ValidationHelpers do
 				.with(field_condition_class.new(city: user_city, country: user_country))
 				.and_return city_and_country_dataset_double
 
-			allow(name_dataset_double).to receive(:exclude).with(id: 42)
+			allow(name_dataset_double).to receive(:exclude).with(form_instance_pk_hash)
 				.and_return(name_dataset_double)
-			allow(city_and_country_dataset_double).to receive(:exclude).with(id: 42)
+			allow(city_and_country_dataset_double).to receive(:exclude).with(form_instance_pk_hash)
 				.and_return(city_and_country_dataset_double)
 		end
+
+		let(:form_instance_pk_hash) { { id: 42 } }
 
 		let(:field_condition_class) do
 			Class.new do

@@ -33,26 +33,4 @@ Gem::Specification.new do |spec|
 	spec.add_runtime_dependency 'formalism', '~> 0.5.0'
 	spec.add_runtime_dependency 'gorilla_patch', '>= 4.0', '< 6'
 	spec.add_runtime_dependency 'r18n-core', '~> 5.0'
-
-	spec.add_development_dependency 'email_address', '~> 0.2.4'
-	spec.add_development_dependency 'net-smtp', '~> 0.3.1'
-	spec.add_development_dependency 'sequel', '~> 5.60'
-	spec.add_development_dependency 'uuid', '~> 2.0'
-
-	spec.add_development_dependency 'pry-byebug', '~> 3.9'
-
-	spec.add_development_dependency 'bundler', '~> 2.0'
-	spec.add_development_dependency 'bundler-audit', '~> 0.9.1'
-
-	spec.add_development_dependency 'gem_toys', '~> 0.12.1'
-	spec.add_development_dependency 'toys', '~> 0.14.2'
-
-	spec.add_development_dependency 'rspec', '~> 3.9'
-	spec.add_development_dependency 'simplecov', '~> 0.22.0'
-	spec.add_development_dependency 'simplecov-cobertura', '~> 2.1'
-
-	spec.add_development_dependency 'rubocop', '~> 1.52.1'
-	spec.add_development_dependency 'rubocop-performance', '~> 1.0'
-	spec.add_development_dependency 'rubocop-rspec', '~> 2.2'
-	spec.add_development_dependency 'rubocop-sequel', '~> 0.3.4'
 end

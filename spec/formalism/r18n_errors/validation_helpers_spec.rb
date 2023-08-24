@@ -401,13 +401,11 @@ describe Formalism::R18nErrors::ValidationHelpers do
 				end
 			end
 
-			allow(form).to receive(:model).and_return form_model
-
 			form_instance = instance_double(Sequel::Model)
 
 			allow(form_instance).to receive(:pk_hash).and_return(form_instance_pk_hash)
 
-			allow(form).to receive(:instance).and_return form_instance
+			allow(form).to receive_messages(model: form_model, instance: form_instance)
 
 			allow(form).to receive(:field_condition) do |name, value|
 				field_condition_class.new(name => value)

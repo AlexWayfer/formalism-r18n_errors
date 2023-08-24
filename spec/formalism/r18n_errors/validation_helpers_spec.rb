@@ -340,8 +340,6 @@ describe Formalism::R18nErrors::ValidationHelpers do
 
 	describe '#validate_uuid' do
 		before do
-			require 'uuid'
-
 			user_form_class.class_exec do
 				field :key, String
 				field :another_key, String

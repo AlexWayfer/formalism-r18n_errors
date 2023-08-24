@@ -76,12 +76,11 @@ module Formalism
 				valid
 			end
 
-			## Requires `uuid` gem
 			def validate_uuid(*validation_fields)
 				valid = true
 				validation_fields.flatten.each do |validation_field|
 					next unless field_changed?(validation_field)
-					next if UUID.validate public_send(validation_field)
+					next if /\A\h{8}-\h{4}-\h{4}-\h{4}-\h{12}\z/.match? public_send(validation_field)
 
 					valid = false
 					add_error validation_field, :not_valid_uuid

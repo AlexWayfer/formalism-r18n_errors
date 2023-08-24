@@ -7,7 +7,6 @@ gemspec
 gem 'email_address', '~> 0.2.4'
 gem 'net-smtp', '~> 0.3.1'
 gem 'sequel', '~> 5.60'
-gem 'uuid', '~> 2.0'
 
 group :development do
 	gem 'pry-byebug', '~> 3.9'

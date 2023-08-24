@@ -121,7 +121,6 @@ module MyProject
         ## `errors.user.email.not_valid_email`
         validate_email :email
 
-        ## Requires `uuid` gem
         ## `errors.user.key.not_valid_uuid`
         validate_uuid :key
 

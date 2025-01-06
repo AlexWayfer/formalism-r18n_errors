@@ -2,6 +2,20 @@
 
 ## Unreleased
 
+## 0.6.0 (2025-01-06)
+
+*   Drop Ruby 2.6 and 2.7 support.
+*   Add Ruby 3.2, 3.3 and 3.4 support.
+*   Allow `formalism` version 0.6.
+*   Replace `uuid` gem with inline simple Regexp.
+    This gem is outdated, it's dependencies give warnings.
+    We used just 1 method for validation.
+*   Fix specs for Ruby 3.
+*   Update development dependencies.
+*   Resolve new RuboCop offenses.
+*   Move development dependencies from `gemspec` into `Gemfile`.
+*   Switch `email_address` development dependency to fork version.
+
 ## 0.5.1 (2022-09-24)
 
 *   Allow `gorilla_patch` version 5.

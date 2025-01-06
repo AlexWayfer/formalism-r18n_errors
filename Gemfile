@@ -4,7 +4,8 @@ source 'https://rubygems.org'
 
 gemspec
 
-gem 'email_address', '~> 0.2.4'
+## https://github.com/afair/email_address/pull/98
+gem 'email_address', github: 'AlexWayfer/email_address', branch: 'add_ruby_3.4_support'
 gem 'net-smtp', '>= 0.4', '<= 0.6'
 gem 'sequel', '~> 5.60'
 

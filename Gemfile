@@ -5,7 +5,7 @@ source 'https://rubygems.org'
 gemspec
 
 gem 'email_address', '~> 0.2.4'
-gem 'net-smtp', '~> 0.4.0'
+gem 'net-smtp', '>= 0.4', '<= 0.6'
 gem 'sequel', '~> 5.60'
 
 group :development do

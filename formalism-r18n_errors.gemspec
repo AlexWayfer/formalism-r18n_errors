@@ -30,7 +30,7 @@ Gem::Specification.new do |spec|
 
 	spec.required_ruby_version = '>= 3.0', '< 4'
 
-	spec.add_dependency 'formalism', '~> 0.5.0'
+	spec.add_dependency 'formalism', '>= 0.5', '<= 0.7'
 	spec.add_dependency 'gorilla_patch', '>= 4.0', '< 6'
 	spec.add_dependency 'r18n-core', '~> 5.0'
 end

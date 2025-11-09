@@ -128,7 +128,7 @@ module Formalism
 			end
 
 			def add_error_for_uniqueness_validation(fields)
-				if fields.count == 1
+				if fields.one?
 					add_error fields.first, :already_taken
 				else
 					add_error :itself, :already_exists, fields.join('_and_')

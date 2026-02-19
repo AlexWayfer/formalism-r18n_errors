@@ -30,10 +30,10 @@ module Formalism
 			form
 		end
 
-		def add_error(*args, **kwargs)
+		def add_error(*, **)
 			raise '`@errors_key` is required' unless errors_key
 
-			errors.add errors_key, *args, **kwargs
+			errors.add errors_key, *, **
 		end
 
 		def merge_errors_of_nested_form(name, nested_form)

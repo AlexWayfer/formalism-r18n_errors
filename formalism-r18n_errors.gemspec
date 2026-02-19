@@ -28,7 +28,7 @@ Gem::Specification.new do |spec|
 
 	spec.files = Dir['lib/**/*.rb', 'README.md', 'LICENSE.txt', 'CHANGELOG.md']
 
-	spec.required_ruby_version = '>= 3.0', '< 4'
+	spec.required_ruby_version = '>= 3.2', '< 4'
 
 	spec.add_dependency 'formalism', '>= 0.5', '<= 0.7'
 	spec.add_dependency 'gorilla_patch', '>= 4.0', '< 6'
